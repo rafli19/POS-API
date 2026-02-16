@@ -1,4 +1,4 @@
-# diJajanin POS - Backend API
+# POS-API - Backend API
 
 RESTful API untuk sistem Point of Sale (POS) yang dibangun dengan Laravel 12. API ini menyediakan authentication, manajemen produk, transaksi, dan reporting dengan role-based access control.
 
@@ -9,8 +9,8 @@ RESTful API untuk sistem Point of Sale (POS) yang dibangun dengan Laravel 12. AP
 
 ## 🔗 Links
 
-- **Frontend Repository:** [dijajanin-pos-frontend](https://github.com/yourusername/dijajanin-pos-frontend)
-- **Live Demo:** https://pos.rafvoid.my.id
+- **Frontend Repository:** [POS-APP](https://github.com/rafli19/POS-APP)
+- **Live Demo:** https://pos-app.rafvoid.my.id
 - **API Documentation:** https://pos-api.rafvoid.my.id/api/documentation
 
 ## ✨ Fitur Utama
@@ -114,9 +114,9 @@ Setelah running seeders:
 
 | Role | Email | Password |
 |------|-------|----------|
-| **Admin** | admin@example.com | password |
-| **Owner** | owner@example.com | password |
-| **Kasir** | kasir@example.com | password |
+| **Admin** | admin@mail.com | admin123 |
+| **Owner** | owner@mail.com | owner123 |
+| **Kasir** | kasir@mail.com | kasir123 |
 
 ## 📡 API Endpoints
 
@@ -237,12 +237,12 @@ curl -X POST http://localhost:8000/api/v1/products \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: multipart/form-data" \
   -F "category_id=1" \
-  -F "name=Nasi Goreng" \
-  -F "sku=FOOD-001" \
+  -F "name=Kopi" \
+  -F "sku=COF-AME-001" \
   -F "price=25000" \
   -F "stock=100" \
-  -F "min_stock=10" \
-  -F "image=@/path/to/image.jpg"
+  -F "min_stock=5" \
+  -F "image=@/products/image.jpg"
 ```
 
 ## 🔐 Role & Permissions
