@@ -490,6 +490,6 @@ This project is licensed under the MIT License.
 
 ---
 
-**Made with ❤️ by Rafael Void**
+**Made by Raferl**
 
 *Last Updated: February 2026*
