@@ -478,7 +478,7 @@ This project is licensed under the MIT License.
 ## 👨‍💻 Developer
 
 **Rafael Void**
-- Email: rafael@rafvoid.my.id
+- Email: raflierlangga141@gmail.com
 - GitHub: [@rafli19](https://github.com/rafli19)
 - Website: https://rafvoid.my.id
 
