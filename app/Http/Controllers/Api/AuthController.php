@@ -14,32 +14,6 @@ class AuthController extends Controller
 {
     private const TOKEN_NAME = 'auth_token';
 
-    public function register(Request $request): JsonResponse
-    {
-        try {
-            $validator = $this->validateRegistration($request);
-
-            if ($validator->fails()) {
-                return $this->errorResponse('Validation failed', $validator->errors(), 422);
-            }
-
-            $user = $this->createUser($request);
-            $token = $user->createToken(self::TOKEN_NAME)->plainTextToken;
-
-            return $this->successResponse('Registration successful', [
-                'user' => $user,
-                'token' => $token
-            ], 201);
-
-        } catch (\Exception $e) {
-            Log::error('Registration failed: ' . $e->getMessage(), [
-                'email' => $request->email,
-                'trace' => $e->getTraceAsString()
-            ]);
-
-            return $this->errorResponse('Registration failed', null, 500);
-        }
-    }
 
     public function login(Request $request): JsonResponse
     {
@@ -112,16 +86,6 @@ class AuthController extends Controller
 
             return $this->errorResponse('Failed to get user data', null, 500);
         }
-    }
-
-    private function validateRegistration(Request $request)
-    {
-        return Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|in:owner,admin,kasir',
-        ]);
     }
 
     private function validateLogin(Request $request)

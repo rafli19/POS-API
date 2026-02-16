@@ -11,7 +11,6 @@ use App\Http\Controllers\Api\DashboardController;
 Route::prefix('v1')->group(function () {
 
     // Public Routes
-    Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
 
     // Protected Routes
